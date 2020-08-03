@@ -75,8 +75,7 @@ function getCaption(ajax_response) {
 
   } catch (err) {
     console.log(err);
-    document.getElementById("demo").innerHTML = ('오류가 발생했어요.');
-    alert('Error at getCaption function - see console form more details.');
+    document.getElementById("demo").innerHTML = '<span style="margin-left:25%;">자막을 찾지 못했어요.</span><br><img src="https://m.xcite.com/media/wysiwyg/404_page/404-bg-small.gif" style="width:100%;">';
   }
 }
 

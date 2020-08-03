@@ -1,0 +1,298 @@
+head, body {
+  margin:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  background: #f1f3f6;
+  -webkit-font-smoothing: antialiased;
+}
+
+p{
+  line-height:1.7em;
+}
+
+#demo {
+  overflow:scroll;
+  margin-left:10px;
+  margin-right:10px;
+  width:100%;
+  height:65vh;
+  margin-top:30px;
+  margin-bottom:100px;
+  -webkit-font-smoothing: antialiased;
+  
+}
+
+#player {
+  width:100%;
+  border-radius:0 0 20px 20px;
+  max-height:30%;
+}
+
+.youtube-marker {
+  font-size:18px;
+  padding:2px;
+}
+
+.youtube-marker:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.youtube-marker-current {
+  position:relative;
+  background: rgba(85, 110, 230, 0.3);
+}
+
+.youtube-transcript-card {
+  width:88%;
+flex-direction: column;
+  background: #f1f3f6;
+  border-radius: 20px;
+  box-shadow: inset 0 0 15px rgba(55, 84, 170, 0), inset 0 0 20px rgba(255, 255, 255, 0), 7px 7px 15px rgba(55, 84, 170, 0.15), -7px -7px 20px white, inset 0px 0px 4px rgba(255, 255, 255, 0.2);
+  padding:20px 15px;
+  margin-bottom:20px;
+}
+
+
+.toolbar {
+  position:fixed;
+  bottom:0;
+  left:0;
+  height:70px;
+  background:#556ee6;
+  width:100%;
+  margin-bottom:-5px;
+    align-items: center;
+  justify-content: center;
+}
+
+.translate {
+  position:fixed;
+  right:10px;
+  bottom:18px;
+  display: flex;
+  cursor: pointer;
+  transition: all .2s;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+#toggle {
+  display: none;
+}
+
+/*정지/재생 버튼*/
+body .toggleWrapper {
+  position:fixed;
+  left:43%;
+  bottom:30px;
+  display: flex;
+  cursor: pointer;
+  transition: all .2s;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fe4551;
+  box-shadow: 0 20px 20px 0 rgba(254, 69, 81, 0.3);
+}
+body .toggleWrapper:active {
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 15px 15px 0 rgba(254, 69, 81, 0.5);
+}
+body .toggleWrapper:active .toggle {
+  height: 17px;
+  width: 17px;
+}
+body .toggleWrapper .toggle {
+  transition: all 0.2s ease-in-out;
+  height: 10px;
+  width: 10px;
+  background-color: transparent;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  animation: red .7s linear forwards;
+}
+
+#toggle:checked ~ .background {
+  background-color: #f9faf7;
+}
+#toggle:checked + .toggleWrapper {
+  background-color: #48e98a;
+  box-shadow: 0 20px 20px 0 rgba(72, 233, 138, 0.3);
+}
+#toggle:checked + .toggleWrapper:active {
+  box-shadow: 0 15px 15px 0 rgba(72, 233, 138, 0.5);
+}
+#toggle:checked + .toggleWrapper .toggle {
+  width: 0;
+  background-color: #fff;
+  border-color: transparent;
+  border-radius: 30px;
+  animation: green .7s linear forwards !important;
+}
+
+/*대사 팔로잉 버튼*/
+.switch {
+  height: 24px;
+  display: inline-block;;
+  position: relative;
+  left:10px;
+  top:18px;
+  cursor: pointer;
+}
+.switch input {
+  display: none;
+}
+.switch input + span {
+  padding-left: 50px;
+  min-height: 24px;
+  line-height: 24px;
+  display: block;
+  color: #99A3BA;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+}
+.switch input + span:before, .switch input + span:after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 12px;
+}
+.switch input + span:before {
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 24px;
+  background: #E4ECFA;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.switch input + span:after {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  top: 3px;
+  left: 3px;
+  box-shadow: 0 1px 3px rgba(18, 22, 33, 0.1);
+  -webkit-transition: all .45s ease;
+  transition: all .45s ease;
+}
+.switch input + span em {
+  width: 8px;
+  height: 7px;
+  background: #f3a683;
+  position: absolute;
+  left: 8px;
+  bottom: 7px;
+  border-radius: 2px;
+  display: block;
+  z-index: 1;
+  -webkit-transition: all .45s ease;
+  transition: all .45s ease;
+}
+.switch input + span em:before {
+  content: '';
+  width: 2px;
+  height: 2px;
+  border-radius: 1px;
+  background: #fff;
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  margin: -1px 0 0 -1px;
+}
+.switch input + span em:after {
+  content: '';
+  display: block;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border: 1px solid #99A3BA;
+  border-bottom: 0;
+  width: 6px;
+  height: 4px;
+  left: 1px;
+  bottom: 6px;
+  position: absolute;
+  z-index: 1;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transition: all .45s ease;
+  transition: all .45s ease;
+  -webkit-transform: rotate(-35deg) translate(0, 1px);
+          transform: rotate(-35deg) translate(0, 1px);
+}
+.switch input + span strong {
+  font-weight: normal;
+  position: relative;
+  display: block;
+  top: 1px;
+}
+.switch input + span strong:before, .switch input + span strong:after {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  font-family: 'Mukta Malar', Arial;
+  -webkit-backface-visibility: hidden;
+}
+.switch input + span strong:before {
+  content: '수동';
+  -webkit-transition: all .3s ease .2s;
+  transition: all .3s ease .2s;
+}
+.switch input + span strong:after {
+  content: '싱크 스크롤 ';
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f3a683;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transform: translate(2px, 0);
+          transform: translate(2px, 0);
+}
+.switch input:checked + span:before {
+  background: rgba(86, 40, 238, 0.35);
+}
+.switch input:checked + span:after {
+  background: #fff;
+  -webkit-transform: translate(18px, 0);
+          transform: translate(18px, 0);
+}
+.switch input:checked + span em {
+  -webkit-transform: translate(18px, 0);
+          transform: translate(18px, 0);
+  background: #f3a683;
+}
+.switch input:checked + span em:after {
+  border-color: #f3a683;
+  -webkit-transform: rotate(0deg) translate(0, 0);
+          transform: rotate(0deg) translate(0, 0);
+}
+.switch input:checked + span strong:before {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transform: translate(-2px, 0);
+          transform: translate(-2px, 0);
+}
+.switch input:checked + span strong:after {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: all .3s ease .2s;
+  transition: all .3s ease .2s;
+}

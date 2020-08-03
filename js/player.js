@@ -18,15 +18,15 @@ function getParam(sname) {
 
 }
 
-jQuery(function() {
+$(function() {
     function setAspectRatio() {
-      jQuery('iframe').each(function() {
-        jQuery(this).css('height', jQuery(this).width() * 9/16);
+      $('iframe').each(function() {
+        $(this).css('height', $(this).width() * 9/16);
       });
     }
 
     setAspectRatio();   
-    jQuery(window).resize(setAspectRatio);
+    $(window).resize(setAspectRatio);
 
     document.getElementById('player').src = "https://www.youtube.com/embed/"+getParam("id")+"?enablejsapi=1&cc_load_policy=3&modestbranding=0&autohide=1&autoplay=0&controls=0&rel=0&amp;fs=0&amp;showinfo=0";
 });

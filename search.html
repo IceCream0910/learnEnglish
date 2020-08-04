@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">  </script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js">  </script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js">  </script> 
+<script src="js/search.js">  </script> 
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-light bg-faded" style="background:#fff;">
+	<div class="row">
+		 <div class="col-sm-3">
+  			<a href="index.html"><h1 class="logo"><img id="imgLogo" src="https://i.imgur.com/VUsdZhJ.jpg" style="height:50px; margin-left:-20px;"></h1></a>
+         </div>
+
+         <script>
+    $(function() {
+        $("#imgLogo").hover(
+            function() {
+                $(this).attr("src", "https://cdn.dribbble.com/users/1299339/screenshots/7171481/media/fdaf1369b0a1e391e79f1e985c716272.gif");
+            },
+            function() {
+                $(this).attr("src", "https://cdn.dribbble.com/users/1299339/screenshots/7171481/media/fdaf1369b0a1e391e79f1e985c716272.gif");
+            }                         
+        );                  
+    });
+</script>
+
+		<div class="col-sm-9">
+        	
+        	 <form class="form-inline " style="margin-top:5px;" id="search-form" name="search-form" onSubmit="return search()">
+             		<table width="100%">
+                    	<tr>
+                        	<td width="100%">
+                            	<div class="d3 float-right" style="width:100%;" >	
+                                  <input class="form-control search-field" type="search" id="query" style="width:100%; border-radius:10px 0 0 10px;"  placeholder="검색어를 입력하세요">
+                                  <span class="focus-border" style="border-radius:10px">
+                                            <i></i>
+                                        </span>
+                                    </div>
+                            </td>
+                            <td>
+                            	  <button class="btn btn-outline-danger my-2 my-sm-0 " type="submit" id="search-btn" style=" margin-left:-15px;border-radius:0 10px 10px 0;" name="search-btn" value=""><i class="fa fa-search"></i></button>
+                            </td>
+    				</tr>                
+	              </table>  
+                </form>
+        </div>
+    </div>
+ 
+</nav>
+
+
+<div class="content" id="resultsContainer">
+<div class="container-fluid" id="results">
+
+  <img id="loader" src="https://i.pinimg.com/originals/65/69/fc/6569fc7028103469579e00fb9df8562e.gif" style="display:none; border:none; width:100%;">
+
+    
+</div> <!-- ENd of container fluid -->
+<div class="container-fluid">
+	<div class="row">
+    	<div class="col-sm-12">    <div id="btn-cnt"></div> </div>
+    </div>
+</div>
+</div> <!-- End of content -->
+
+</body>
+</html>

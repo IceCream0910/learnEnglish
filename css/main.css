@@ -1,3 +1,7 @@
+body, html, head {
+  margin:5px;
+}
+
 .yt { color:#CD201F; }
 .header { border-bottom:4px solid #cd201f; }
 .logo { width:130px; float:left; }
@@ -7,21 +11,16 @@
 .search-field ~ .focus-border:before,
 .search-field ~ .focus-border:after{content: ""; position: absolute; top: 0; right: 0; width: 0; height: 2px; background-color: #CD201F; transition: 0.2s; transition-delay: 0.2s;}
 .search-field ~ .focus-border:after{top: auto; bottom: 0; right: auto; left: 0; transition-delay: 0.6s;}
-.search-field ~ .focus-border i:before,
-.search-field ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: #CD201F; transition: 0.2s;}
-.search-field ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0; transition-delay: 0.4s;}
-.search-field:focus ~ .focus-border:before,
-.search-field:focus ~ .focus-border:after{width: 100%; transition: 0.2s; transition-delay: 0.6s;}
-.search-field:focus ~ .focus-border:after{transition-delay: 0.2s;}
-.search-field:focus ~ .focus-border i:before,
-.search-field:focus ~ .focus-border i:after{height: 100%; transition: 0.2s;}
-.search-field:focus ~ .focus-border i:after{transition-delay: 0.4s;}
 .d3{float: left; width: auto; margin-right:10px;  position: relative;} 
 #results {   list-style:none;  }
+#results a {
+  text-decoration:none;
+  color:#303a52;
+}
 #results .row { margin-bottom:10px; border-bottom:1px dotted #ccc; padding-bottom:10px; }
-.cTitle { color:#CD201F;  }
-#results img { padding:10px; border:1px solid #ccc; }
-#results h4 { color:#9a9b9c; }
+.cTitle { color:#e66868;  }
+#results img { border-radius:20px; width:100%;}
+#results h4 { margin-top:10px;color:#303a52; }
 #buttons { border:1px solid red; }
 .paging-button {  }
 .button-container { margin:10px 0; }
